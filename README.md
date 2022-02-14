@@ -1,2 +1,2 @@
-GET STARTED : 
-yarn install => yarn dev
+GETTING STARTED : <br/>
+$ yarn install => yarn dev
