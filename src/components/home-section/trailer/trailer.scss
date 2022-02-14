@@ -1,0 +1,48 @@
+@use "../../../scss/" as *;
+@use "sass:math";
+.trailer {
+  &__content {
+    @include flex(flex-start, center);
+
+    &__img,
+    &__info {
+      width: 50%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      opacity: 0;
+      transition-delay: 0s;
+    }
+
+    &__img {
+      transform: translateX(-200px);
+      img {
+        height: 100%;
+      }
+    }
+    &__info {
+      transform: translateX(200px);
+      .video {
+        position: relative;
+        margin-top: 3rem;
+        width: 90%;
+        // height: 0;
+        // padding-bottom: 62.5%;
+        // overflow: hidden;
+        // iframe {
+        //   position: absolute;
+        //   top: 0;
+        //   left: 0;
+        //   height: 90%;
+        //   width: 100%;
+        // }
+      }
+    }
+  }
+  &.active &__content &__content__img,
+  &.active &__content &__content__info {
+    transform: translateX(0);
+    opacity: 1;
+    transition-delay: 0.5s;
+  }
+}
